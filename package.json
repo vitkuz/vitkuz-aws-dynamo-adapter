@@ -1,0 +1,53 @@
+{
+    "name": "@vitkuz/aws-dynamo-adapter",
+    "version": "1.1.0",
+    "description": "Functional DynamoDB adapter",
+    "main": "./dist/index.js",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.mjs",
+            "require": "./dist/index.js"
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "pub": "npm publish --access public",
+        "build": "tsup",
+        "dev": "tsup --watch",
+        "prepublishOnly": "npm run format && npm run build",
+        "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\""
+    },
+    "dependencies": {
+        "@aws-sdk/client-dynamodb": "^3.958.0",
+        "@aws-sdk/lib-dynamodb": "^3.958.0",
+        "uuid": "^13.0.0"
+    },
+    "devDependencies": {
+        "@aws-sdk/client-cloudformation": "^3.958.0",
+        "@aws-sdk/client-cloudwatch-logs": "^3.958.0",
+        "@types/node": "^25.0.3",
+        "@types/uuid": "^10.0.0",
+        "@vitkuz/aws-logger": "^1.3.0",
+        "prettier": "^3.7.4",
+        "rimraf": "^6.1.2",
+        "tsup": "^8.5.1",
+        "tsx": "^4.21.0",
+        "typescript": "^5.9.3"
+    },
+    "keywords": [],
+    "author": "Vitali Kuzmenka",
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vitkuz/vitkuz-aws-dynamo-adapter.git"
+    },
+    "bugs": {
+        "url": "https://github.com/vitkuz/vitkuz-aws-dynamo-adapter/issues"
+    },
+    "homepage": "https://github.com/vitkuz/vitkuz-aws-dynamo-adapter#readme"
+}
